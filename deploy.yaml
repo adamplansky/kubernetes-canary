@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: goserver
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: goserver
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: goserver
+        tier: backend
+    spec:
+      containers:
+      - name: goserver
+        image: gcr.io/endevel-001/goserver
+        ports:
+        - containerPort: 80

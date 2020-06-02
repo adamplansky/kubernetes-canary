@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+metadata:
+  name: kubernetes-canary
+build:
+  artifacts:
+  - image: gcr.io/endevel-001/goserver
+deploy:
+  kubectl:
+    manifests:
+    - deploy.yaml
