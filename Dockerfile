@@ -9,7 +9,7 @@ WORKDIR /src/
 
 # Copy and download dependency using go mod
 COPY go.mod .
-COPY go.sum .
+#COPY go.sum .
 RUN go mod download
 
 COPY . .
@@ -18,4 +18,4 @@ RUN CGO_ENABLED=0 go build -o /bin/server
 FROM scratch
 COPY --from=build /bin/server /bin/server
 EXPOSE 8080
-ENTRYPOINT ["/bin/demo"]
+ENTRYPOINT ["/bin/server"]

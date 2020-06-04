@@ -1,18 +1,18 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: goserver
+  name: goserver-v2
   namespace: default
 spec:
   selector:
     matchLabels:
       app: goserver
-  replicas: 2 # tells deployment to run 2 pods matching the template
+  replicas: 1 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
         app: goserver
-        tier: backend
+        version: v2
     spec:
       containers:
       - name: goserver
