@@ -24,7 +24,6 @@ jobs:
       - name: test
         run: |
           echo "A initial message"
-          ls /usr/bin/
           which go
           go version
           go test ./...
