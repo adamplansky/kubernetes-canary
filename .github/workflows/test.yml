@@ -24,6 +24,11 @@ jobs:
       - name: test
         run: |
           echo "A initial message"
+          ls /usr/
+          ls /usr/local/bin
+          ls /usr/local
+          ls /usr/local/go
+          ls /usr/local/go/bin/
           /usr/local/go/bin/go version
 #          go test ./...
       - run: echo "One last message"
