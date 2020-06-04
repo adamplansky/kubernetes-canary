@@ -9,8 +9,8 @@ jobs:
   # This workflow contains a single job called "build"
   test:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-#    runs-on: linux
+#    runs-on: ubuntu-latest
+    runs-on: linux
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -24,6 +24,7 @@ jobs:
       - name: test
         run: |
           echo "A initial message"
+          ls /usr/bin/
           which go
           go version
           go test ./...
