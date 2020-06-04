@@ -15,9 +15,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: run
-        uses: docker://golang:1.14
+#      - name: run
+#        uses: docker://golang:1.14
       - name: test
+        uses: docker://golang:1.14
         run: |
           echo "A initial message"
           go version
