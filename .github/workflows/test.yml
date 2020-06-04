@@ -14,13 +14,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-#      - name: run
-#        uses: docker://golang:1.14
+#      - uses: actions/checkout@v2
+      - uses: docker://golang:1.14
       - name: test
-        uses: docker://golang:1.14
         run: |
           echo "A initial message"
           go version
-          go test ./...
+#          go test ./...
       - run: echo "One last message"
